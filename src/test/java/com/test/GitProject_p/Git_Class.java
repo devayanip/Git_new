@@ -16,13 +16,15 @@ public class Git_Class
 	WebDriver driver;
 	
   @Test
-  public void sign() 
+  public void sign() throws InterruptedException 
   {
 	  WebElement signbutton=driver.findElement(By.xpath("//a[@title='Log in to your customer account']"));  
 	  signbutton.click();
 	  
 	  WebElement email=driver.findElement(By.id("email_create"));
 	  email.sendKeys("sam@gmail.com");
+	  
+	  Thread.sleep(3000);
 	  
 	  WebElement submit=driver.findElement(By.id("SubmitCreate"));
 	  submit.click();
